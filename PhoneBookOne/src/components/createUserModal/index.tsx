@@ -12,7 +12,15 @@ const CreateUserModal = ({ onClose }: CreateUserModalProps) => {
   const [isValidPhone, setIsValidPhone] = useState(true);
   const [isValidName, setIsValidName] = useState(true);
 
+  const resetForm = () => {
+    setName("");
+    setPhone("");
+    setIsValidPhone(true);
+    setIsValidName(true);
+  };
+
   const handleClose = () => {
+    resetForm();
     onClose(null);
   };
 
@@ -37,6 +45,7 @@ const CreateUserModal = ({ onClose }: CreateUserModalProps) => {
     } else {
       onClose(null);
     }
+    resetForm();
   };
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,7 +108,7 @@ const CreateUserModal = ({ onClose }: CreateUserModalProps) => {
             <button className="btn" type="submit">
               Create
             </button>
-            <button className="btn" type="reset">
+            <button className="btn" type="reset" onClick={handleClose}>
               Cancel
             </button>
           </div>
