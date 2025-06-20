@@ -6,13 +6,17 @@ import { chunkArray } from "../../utils/helpers";
 
 interface ContactListProps {
   data: User[];
+  onDelete: (id: number) => void;
+  onEdit: (id: number) => void;
 }
 
-const ContactList: React.FC<ContactListProps> = ({ data }) => {
+const ContactList: React.FC<ContactListProps> = ({
+  data,
+  onDelete,
+  onEdit,
+}) => {
   const [userPages, setUserPages] = useState<Array<User[]>>([]);
   const [currentPage, setCurrentPage] = useState(0);
-
-  console.log("Data received in ContactList:", data);
 
   useEffect(() => {
     setUserPages(chunkArray(data, 5));
@@ -30,8 +34,16 @@ const ContactList: React.FC<ContactListProps> = ({ data }) => {
     }
   };
 
+  const handleDelete = (id: number) => {
+    onDelete(id);
+  };
+
+  const handleEdit = (id: number) => {
+    onEdit(id);
+  };
+
   return (
-    <div className="container">
+    <div className="contact-container">
       <div className="contact-list-container">
         <ul className="contact-list first-column">
           {userPages &&
@@ -39,8 +51,8 @@ const ContactList: React.FC<ContactListProps> = ({ data }) => {
               <ContactListItem
                 key={user.id}
                 user={user}
-                onDelete={() => console.log(`Delete user with id: ${user.id}`)}
-                onEdit={() => console.log(`Edit user with id: ${user.id}`)}
+                onDelete={() => handleDelete(user.id)}
+                onEdit={() => handleEdit(user.id)}
               />
             ))}
         </ul>
@@ -50,8 +62,8 @@ const ContactList: React.FC<ContactListProps> = ({ data }) => {
               <ContactListItem
                 key={user.id}
                 user={user}
-                onDelete={() => console.log(`Delete user with id: ${user.id}`)}
-                onEdit={() => console.log(`Edit user with id: ${user.id}`)}
+                onDelete={() => handleDelete(user.id)}
+                onEdit={() => handleEdit(user.id)}
               />
             ))}
         </ul>

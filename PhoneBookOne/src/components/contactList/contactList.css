@@ -1,6 +1,8 @@
 .contact-list-container {
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .contact-list {
@@ -40,4 +42,11 @@
   flex-direction: row;
   align-items: center;
   text-align: center;
+}
+
+.pagination {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

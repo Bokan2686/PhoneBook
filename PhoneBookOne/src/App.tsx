@@ -9,14 +9,26 @@ function App() {
   const [users, setUsers] = useState<Array<User>>(userData);
   const [showModal, setShowModal] = useState(false);
 
-  const handleCloseModal = (newUser: User | null) => {
+  const handleCloseModal = (
+    newUser: { name: string; phone: string } | null
+  ) => {
     setShowModal(false);
     if (newUser) {
-      setUsers((prevUsers) => [...prevUsers, newUser]);
+      setUsers((prevUsers) => [
+        ...prevUsers,
+        { ...newUser, id: prevUsers.length + 1 },
+      ]);
     }
   };
 
-  console.log("Current users:", users);
+  const handleDelete = (id: number) => {
+    setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
+  };
+
+  const handleEdit = (id: number) => {
+    // Logic for editing a user can be implemented here
+    console.log(`Edit user with id: ${id}`);
+  };
 
   return (
     <div>
@@ -38,7 +50,7 @@ function App() {
         </button>
       </div>
       <div className="contact-list-container">
-        <ContactList data={users} />
+        <ContactList data={users} onDelete={handleDelete} onEdit={handleEdit} />
       </div>
       {showModal && <CreateUserModal onClose={handleCloseModal} />}
     </div>

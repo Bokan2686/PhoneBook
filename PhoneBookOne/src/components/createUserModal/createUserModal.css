@@ -14,20 +14,23 @@
   position: relative;
   background-color: #fefefe;
   margin: 10% auto;
-
   border: 1px solid #888;
   width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .modal-header {
   padding: 10px;
-  background-color: #f1f1f1;
+  background-color: #476f95;
   border-bottom: 1px solid #ddd;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
 }
 
 .close-button {
-  color: #aaa;
+  color: #000000;
   float: right;
   font-size: 10px;
   font-weight: bold;
@@ -41,7 +44,16 @@
     padding: 10px;
     margin: 5px 0;
     display: flex;
+    flex-direction: column;
     gap: 10px;
+
+    .input-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      gap: 10px;
+    }
 
     .label-text {
       display: block;
@@ -55,5 +67,11 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+  }
+
+  .error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
   }
 }
