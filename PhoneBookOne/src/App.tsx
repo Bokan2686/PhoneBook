@@ -1,6 +1,6 @@
 import "./App.css";
 import ContactList from "./components/contactList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { User } from "./utils/mockData";
 import { userData } from "./utils/mockData";
 import CreateUserModal from "./components/createUserModal";
@@ -8,6 +8,14 @@ import CreateUserModal from "./components/createUserModal";
 function App() {
   const [users, setUsers] = useState<Array<User>>(userData);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    setUsers((prevUsers) => sortUsers(prevUsers));
+  }, [users]);
+
+  const sortUsers = (users: User[]) => {
+    return users.sort((a, b) => a.name.localeCompare(b.name));
+  };
 
   const handleCloseModal = (
     newUser: { name: string; phone: string } | null

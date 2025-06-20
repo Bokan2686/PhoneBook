@@ -5,3 +5,10 @@ li {
   padding: 10px;
   border-bottom: 1px solid #ccc;
 }
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
