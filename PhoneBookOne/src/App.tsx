@@ -7,7 +7,7 @@ import CreateUserModal from "./components/createUserModal";
 
 function App() {
   const [users, setUsers] = useState<Array<User>>(userData);
-  const [showModal, setShowModal] = useState(false);
+  const [showCreateModal, setShowCreateModal] = useState(false);
 
   useEffect(() => {
     setUsers((prevUsers) => sortUsers(prevUsers));
@@ -20,7 +20,7 @@ function App() {
   const handleCloseModal = (
     newUser: { name: string; phone: string } | null
   ) => {
-    setShowModal(false);
+    setShowCreateModal(false);
     if (newUser) {
       setUsers((prevUsers) => [
         ...prevUsers,
@@ -46,10 +46,10 @@ function App() {
       <div>
         <button
           onClick={() => {
-            if (showModal) {
-              setShowModal(false);
+            if (showCreateModal) {
+              setShowCreateModal(false);
             } else {
-              setShowModal(true);
+              setShowCreateModal(true);
             }
           }}
           className="btn btn-primary"
@@ -60,7 +60,7 @@ function App() {
       <div>
         <ContactList data={users} onDelete={handleDelete} onEdit={handleEdit} />
       </div>
-      {showModal && <CreateUserModal onClose={handleCloseModal} />}
+      {showCreateModal && <CreateUserModal onClose={handleCloseModal} />}
     </div>
   );
 }
