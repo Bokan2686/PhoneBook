@@ -1,0 +1,48 @@
+export interface User {
+  id: number;
+  name: string;
+  phone: string;
+}
+
+export const userData: User[] = [
+  { id: 1, name: "John Doe", phone: "123-456-7890" },
+  { id: 2, name: "Jane Smith", phone: "987-654-3210" },
+  { id: 3, name: "Alice Johnson", phone: "555-555-5555" },
+  { id: 4, name: "Bob Brown", phone: "444-444-4444" },
+  { id: 5, name: "Charlie White", phone: "333-333-3333" },
+  { id: 6, name: "Diana Green", phone: "222-222-2222" },
+  { id: 7, name: "Ethan Blue", phone: "111-111-1111" },
+  { id: 8, name: "Fiona Black", phone: "000-000-0000" },
+  { id: 9, name: "George Yellow", phone: "123-123-1234" },
+  { id: 10, name: "Hannah Purple", phone: "456-456-4567" },
+  { id: 11, name: "Ian Orange", phone: "789-789-7890" },
+  { id: 12, name: "Julia Pink", phone: "321-321-3210" },
+  { id: 13, name: "Kevin Gray", phone: "654-654-6543" },
+  { id: 14, name: "Laura Cyan", phone: "987-987-9876" },
+  { id: 15, name: "Mike Magenta", phone: "111-222-3333" },
+  { id: 16, name: "Nina Teal", phone: "444-555-6666" },
+  { id: 17, name: "Oscar Brown", phone: "777-888-9999" },
+  { id: 18, name: "Paula White", phone: "000-111-2222" },
+  { id: 19, name: "Quinn Black", phone: "333-444-5555" },
+  { id: 20, name: "Rita Gold", phone: "666-777-8888" },
+  { id: 21, name: "Sam Silver", phone: "999-000-1111" },
+  { id: 22, name: "Tina Bronze", phone: "222-333-4444" },
+  { id: 23, name: "Ursula Copper", phone: "555-666-7777" },
+  { id: 24, name: "Victor Steel", phone: "888-999-0000" },
+  { id: 25, name: "Wendy Zinc", phone: "111-222-3333" },
+  { id: 26, name: "Xander Platinum", phone: "444-555-6666" },
+  { id: 27, name: "Yara Diamond", phone: "777-888-9999" },
+  { id: 28, name: "Zane Emerald", phone: "000-111-2222" },
+  { id: 29, name: "Alice Blue", phone: "333-444-5555" },
+  { id: 30, name: "Bob Red", phone: "666-777-8888" },
+  { id: 31, name: "Charlie Green", phone: "999-000-1111" },
+  { id: 32, name: "Diana Yellow", phone: "222-333-4444" },
+  { id: 33, name: "Ethan Orange", phone: "555-666-7777" },
+  { id: 34, name: "Fiona Purple", phone: "888-999-0000" },
+  { id: 35, name: "George Pink", phone: "111-222-3333" },
+  { id: 36, name: "Hannah Cyan", phone: "444-555-6666" },
+  { id: 37, name: "Ian Magenta", phone: "777-888-9999" },
+  { id: 38, name: "Julia Teal", phone: "000-111-2222" },
+  { id: 39, name: "Kevin Brown", phone: "333-444-5555" },
+  { id: 40, name: "Laura White", phone: "666-777-8888" },
+];
