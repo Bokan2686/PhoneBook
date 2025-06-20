@@ -57,7 +57,7 @@ function App() {
           Add Contact
         </button>
       </div>
-      <div className="contact-list-container">
+      <div>
         <ContactList data={users} onDelete={handleDelete} onEdit={handleEdit} />
       </div>
       {showModal && <CreateUserModal onClose={handleCloseModal} />}
